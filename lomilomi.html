@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lomi Lomi — Estética Canina a Domicilio | CDMX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --y: #F5C840; --yd: #D9A800; --yl: #FEF8E0;
+  --m: #5DCAA5; --ml: #E2F7F0;
+  --t: #D85A30; --tl: #FCEADE;
+  --cr: #F6F1E7; --cr2: #EBE4D5;
+  --dk: #242320; --mid: #68655E; --mu: #9E9B93;
+  --wh: #FEFDFB;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cr); color: var(--dk); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 52px;
+  background: rgba(246,241,231,.93); backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200,190,168,.25);
+}
+.logo { font-family: 'Dongle', sans-serif; font-size: 28px; font-weight: 700; color: var(--dk); text-decoration: none; }
+.logo span { color: var(--t); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--mid); text-decoration: none; transition: color .15s; }
+.nav-links a:hover { color: var(--dk); }
+.nav-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--y); color: var(--dk);
+  font-size: 14px; font-weight: 600; padding: 10px 22px;
+  border-radius: 50px; border: none; cursor: pointer; text-decoration: none;
+  transition: background .15s, transform .12s;
+  box-shadow: 0 2px 12px rgba(245,200,64,.35);
+}
+.nav-btn:hover { background: var(--yd); transform: translateY(-1px); }
+
+/* HERO */
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 52px);
+  align-items: center; gap: 48px;
+  padding: 64px 52px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; right: -100px; top: -80px;
+  width: 540px; height: 540px; background: var(--y);
+  border-radius: 50%; opacity: .12; pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; left: -50px; bottom: -50px;
+  width: 300px; height: 300px; background: var(--m);
+  border-radius: 50%; opacity: .10; pointer-events: none;
+}
+.hero-l { position: relative; z-index: 1; }
+
+/* PRUEBA SOCIAL — sutil, en el top */
+.ps-row {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--wh); border: 1px solid var(--cr2);
+  border-radius: 50px; padding: 6px 14px 6px 8px;
+  margin-bottom: 22px;
+  animation: up .5s ease both;
+}
+.ps-faces { display: flex; }
+.ps-face {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid var(--wh);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; margin-left: -6px;
+}
+.ps-face:first-child { margin-left: 0; }
+.f1{background:#FDF3C5}.f2{background:#D4F2E9}.f3{background:#D8EFF9}.f4{background:#FCEADE}
+.ps-text { font-size: 12px; color: var(--mid); }
+.ps-text strong { color: var(--dk); font-weight: 600; }
+
+h1 {
+  font-family: 'Dongle', sans-serif;
+  font-size: 82px; font-weight: 700; line-height: .88;
+  letter-spacing: -1px; color: var(--dk);
+  animation: up .5s .07s ease both;
+}
+h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
+
+.hero-sub {
+  font-size: 18px; font-weight: 300; color: var(--mid);
+  line-height: 1.65; margin: 20px 0 32px; max-width: 460px;
+  animation: up .5s .14s ease both;
+}
+.hero-sub strong { color: var(--dk); font-weight: 500; }
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; animation: up .5s .2s ease both; }
+.btn-p {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--y); color: var(--dk);
+  font-size: 15px; font-weight: 700; padding: 15px 28px;
+  border-radius: 50px; border: none; cursor: pointer; text-decoration: none;
+  box-shadow: 0 4px 22px rgba(245,200,64,.42);
+  transition: all .15s;
+}
+.btn-p:hover { background: var(--yd); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,200,64,.5); }
+.btn-g {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--wh); color: var(--dk);
+  font-size: 15px; font-weight: 400; padding: 15px 24px;
+  border-radius: 50px; border: 1.5px solid var(--cr2);
+  cursor: pointer; text-decoration: none; transition: all .15s;
+}
+.btn-g:hover { border-color: var(--m); }
+
+/* Stats bajo los CTAs */
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap;
+  animation: up .5s .26s ease both;
+}
+.stat-num { font-family: 'Dongle', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; }
+.stat-label { font-size: 12px; color: var(--mu); margin-top: 1px; }
+
+/* HERO RIGHT — card con micro-compromiso */
+.hero-r { position: relative; z-index: 1; animation: up .5s .1s ease both; }
+.hero-card {
+  background: var(--wh); border-radius: 26px; padding: 30px;
+  box-shadow: 0 16px 52px rgba(36,35,32,.09);
+  position: relative;
+}
+.hero-card::before {
+  content: ''; position: absolute; top: -10px; right: -10px;
+  width: 64px; height: 64px; background: var(--y);
+  border-radius: 50%; z-index: -1; opacity: .55;
+}
+.card-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--mu); margin-bottom: 16px; }
+
+/* MICRO-COMPROMISO — "¿Cómo es tu perro?" */
+.size-picker { margin-bottom: 20px; }
+.sp-label { font-size: 14px; font-weight: 500; color: var(--dk); margin-bottom: 10px; }
+.sp-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sp-opt {
+  padding: 12px 10px; border-radius: 12px;
+  border: 1.5px solid var(--cr2); background: transparent;
+  cursor: pointer; text-align: center; transition: all .15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.sp-opt:hover { border-color: var(--y); }
+.sp-opt.sel { background: var(--yl); border-color: var(--y); }
+.sp-opt .sp-emoji { font-size: 22px; display: block; margin-bottom: 3px; }
+.sp-opt .sp-name { font-size: 12px; font-weight: 500; color: var(--dk); display: block; }
+/* precio que aparece al seleccionar — anclaje sutil */
+.sp-opt .sp-price { font-size: 11px; color: var(--mu); display: none; margin-top: 2px; }
+.sp-opt.sel .sp-price { display: block; color: var(--m); font-weight: 500; }
+
+.card-divider { height: 1px; background: var(--cr2); margin: 18px 0; }
+
+/* Mini reseña — prueba social compacta */
+.mini-review { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 18px; }
+.mr-av { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.mr-stars { color: var(--y); font-size: 12px; margin-bottom: 2px; letter-spacing: .5px; }
+.mr-q { font-size: 13px; color: var(--mid); line-height: 1.5; font-style: italic; }
+.mr-name { font-size: 11px; color: var(--mu); margin-top: 3px; }
+
+.card-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--y); border-radius: 14px; padding: 14px 18px;
+  text-decoration: none; cursor: pointer;
+  transition: all .15s;
+  box-shadow: 0 4px 16px rgba(245,200,64,.38);
+}
+.card-cta:hover { background: var(--yd); transform: translateY(-1px); }
+.card-cta-t { font-size: 15px; font-weight: 700; color: var(--dk); }
+/* PÉRDIDA — sutil, como nota bajo el CTA */
+.card-cta-s { font-size: 11px; color: rgba(36,35,32,.55); margin-top: 2px; }
+.card-cta-arrow { font-size: 20px; color: var(--dk); }
+
+/* HOW IT WORKS */
+.how { padding: 90px 52px; background: var(--wh); }
+.section-tag {
+  display: inline-block; background: var(--yl); color: #7A6200;
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; padding: 4px 12px; border-radius: 50px; margin-bottom: 12px;
+}
+.section-title { font-family: 'Dongle', sans-serif; font-size: 52px; font-weight: 700; line-height: .95; margin-bottom: 8px; }
+.section-sub { font-size: 15px; color: var(--mid); line-height: 1.6; }
+.steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
+.step-card {
+  background: var(--cr); border-radius: 20px; padding: 28px 24px;
+  position: relative; overflow: hidden; transition: transform .18s;
+}
+.step-card:hover { transform: translateY(-4px); }
+.step-card::after {
+  content: attr(data-n);
+  font-family: 'Dongle', sans-serif; font-size: 108px; font-weight: 700;
+  color: rgba(36,35,32,.04); position: absolute; right: 10px; bottom: -14px; line-height: 1;
+}
+.step-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
+.step-card h4 { font-family: 'Dongle', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+.step-card p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* PRICING */
+.pricing { padding: 90px 52px; background: var(--cr); }
+.pricing-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 14px; }
+.price-tabs { display: flex; gap: 5px; background: var(--wh); padding: 4px; border-radius: 50px; }
+.price-tab {
+  font-size: 13px; font-weight: 400; padding: 7px 16px;
+  border-radius: 50px; border: none; cursor: pointer;
+  background: transparent; color: var(--mid); transition: all .15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.price-tab.a { background: var(--y); color: var(--dk); font-weight: 600; }
+.ps-tab { display: none; } .ps-tab.a { display: block; }
+.pg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.pc {
+  background: var(--wh); border-radius: 18px; padding: 22px 18px;
+  border: 1.5px solid transparent; transition: all .18s; position: relative;
+}
+.pc:hover { border-color: var(--y); transform: translateY(-3px); }
+/* ANCLAJE — badge sutil en el más popular */
+.pc.pop { border-color: var(--m); background: linear-gradient(150deg, var(--ml) 0%, var(--wh) 65%); }
+.pop-b {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--m); color: #fff;
+  font-size: 9px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .5px; padding: 3px 10px; border-radius: 50px; white-space: nowrap;
+}
+.pc-size { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--mu); margin-bottom: 6px; }
+.pc-name { font-family: 'Dongle', sans-serif; font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+.pc-from { font-size: 10px; color: var(--mu); }
+.pc-price { font-size: 26px; font-weight: 700; color: var(--dk); }
+.pc-cur { font-size: 13px; font-weight: 400; color: var(--mid); }
+.pc-list { list-style: none; margin-top: 10px; }
+.pc-list li { font-size: 11px; color: var(--mid); padding: 2px 0; display: flex; align-items: center; gap: 4px; }
+.pc-list li::before { content: '·'; color: var(--m); font-size: 14px; line-height: 1; }
+.exg { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+.exc {
+  background: var(--wh); border-radius: 12px; padding: 14px;
+  display: flex; justify-content: space-between; align-items: center;
+  border: 1.5px solid var(--cr2); transition: border-color .15s;
+}
+.exc:hover { border-color: var(--y); }
+.exc-n { font-size: 13px; font-weight: 500; }
+.exc-p { font-size: 13px; font-weight: 700; color: var(--t); }
+.price-note {
+  margin-top: 20px; font-size: 12px; color: var(--mid);
+  background: var(--yl); border-radius: 10px; padding: 11px 16px;
+  border-left: 3px solid var(--y);
+}
+
+/* TESTIMONIALS */
+.testimonials { padding: 90px 52px; background: var(--dk); color: #fff; }
+.testimonials .section-tag { background: rgba(245,200,64,.15); color: var(--y); }
+.testimonials .section-title { color: #fff; }
+.testimonials .section-sub { color: rgba(255,255,255,.45); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 42px; }
+.rc {
+  background: rgba(255,255,255,.05); border-radius: 18px; padding: 24px 20px;
+  border: 1px solid rgba(255,255,255,.07);
+  display: flex; flex-direction: column; transition: background .18s;
+}
+.rc:hover { background: rgba(255,255,255,.08); }
+.rc-stars { color: var(--y); font-size: 13px; margin-bottom: 10px; letter-spacing: 1px; }
+.rc-text { font-size: 13px; color: rgba(255,255,255,.68); line-height: 1.7; flex: 1; font-weight: 300; margin-bottom: 16px; }
+.rc-author { display: flex; align-items: center; gap: 9px; }
+.rc-av { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.rc-name { font-size: 13px; font-weight: 500; }
+.rc-dog { font-size: 11px; color: rgba(255,255,255,.35); }
+
+/* ZONES */
+.zones { padding: 72px 52px; background: var(--y); }
+.zones-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+.zones .section-tag { background: rgba(36,35,32,.1); color: var(--dk); }
+.zones .section-title { color: var(--dk); }
+.zones .section-sub { color: rgba(36,35,32,.6); }
+.zone-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; max-width: 400px; }
+.zc { background: rgba(255,255,255,.5); color: var(--dk); font-size: 12px; font-weight: 500; padding: 5px 13px; border-radius: 50px; transition: background .14s; }
+.zc:hover { background: rgba(255,255,255,.82); }
+
+/* FAQ */
+.faq { padding: 90px 52px; background: var(--wh); }
+.faq-inner { max-width: 680px; margin: 0 auto; }
+.faq-list { margin-top: 42px; }
+.faq-item { border-bottom: 1px solid var(--cr2); padding: 16px 0; cursor: pointer; }
+.faq-q { display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 500; color: var(--dk); }
+.faq-ico { width: 25px; height: 25px; border-radius: 50%; background: var(--cr); color: var(--mid); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; transition: all .22s; }
+.faq-item.open .faq-ico { background: var(--y); transform: rotate(45deg); }
+.faq-a { font-size: 13px; color: var(--mid); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .28s ease, padding .22s; }
+.faq-item.open .faq-a { max-height: 200px; padding-top: 9px; }
+
+/* FINAL CTA */
+.final-cta { padding: 100px 52px; background: var(--cr); text-align: center; }
+.final-cta h2 { font-family: 'Dongle', sans-serif; font-size: 64px; font-weight: 700; line-height: .92; margin-bottom: 14px; }
+.final-cta h2 .ct { color: var(--t); }
+.final-cta .sub { font-size: 16px; color: var(--mid); margin-bottom: 8px; }
+/* PÉRDIDA — una línea discreta bajo el CTA */
+.cta-nudge { font-size: 12px; color: var(--mu); margin-bottom: 26px; }
+.cta-nudge span { color: var(--t); font-weight: 500; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* FOOTER */
+footer { background: var(--dk); color: rgba(255,255,255,.4); padding: 34px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+footer .logo { color: #fff; }
+footer p { font-size: 13px; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .14s; }
+footer a:hover { color: var(--y); }
+
+/* WA FLOAT */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 200;
+  width: 54px; height: 54px; border-radius: 50%; background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,.46); cursor: pointer; text-decoration: none;
+  animation: wap 2.5s ease-in-out infinite; transition: transform .18s;
+}
+.wa-float:hover { transform: scale(1.1); }
+.wa-float svg { width: 27px; height: 27px; fill: #fff; }
+@keyframes wap { 0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.46)} 50%{box-shadow:0 6px 36px rgba(37,211,102,.7)} }
+
+@keyframes up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:12px 18px}.nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:48px 18px 38px;min-height:auto}
+  h1{font-size:58px}.hero-r{display:none}
+  .how,.pricing,.testimonials,.faq,.final-cta{padding:58px 18px}
+  .steps-row{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .section-title{font-size:40px}
+  .zones{padding:58px 18px}.zones-inner{flex-direction:column}
+  .pg{grid-template-columns:repeat(2,1fr)}
+  footer{padding:26px 18px;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">lomi<span>·</span>lomi</a>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#servicios">Precios</a></li>
+    <li><a href="#testimonios">Reseñas</a></li>
+    <li><a href="#zonas">Zonas</a></li>
+  </ul>
+  <a href="https://wa.me/525541816217?text=Hola!%20Quiero%20reservar%20una%20cita%20🐾" target="_blank" class="nav-btn">Reservar cita →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+
+    <!-- prueba social: sutil, solo un número con caras -->
+    <div class="ps-row">
+      <div class="ps-faces">
+        <div class="ps-face f1">🐕</div>
+        <div class="ps-face f2">🐩</div>
+        <div class="ps-face f3">🐾</div>
+        <div class="ps-face f4">🐶</div>
+      </div>
+      <div class="ps-text"><strong>+230 perritos</strong> atendidos este año en CDMX</div>
+    </div>
+
+    <h1>Tu perro<br>merece un<br><span class="ct">spa</span> en<br>casa <span class="cm">🐾</span></h1>
+
+    <p class="hero-sub">
+      Llevamos la mejor estética canina directo a tu puerta.
+      <strong>Sin estrés de traslado,</strong> con estilista certificada
+      y resultado garantizado.
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://wa.me/525541816217?text=Hola!%20Quiero%20reservar%20una%20cita%20para%20mi%20perro%20🐾" target="_blank" class="btn-p">📅 Reservar mi cita</a>
+      <a href="#servicios" class="btn-g">Ver precios →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">200+</div>
+        <div class="stat-label">perritos felices</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9★</div>
+        <div class="stat-label">en Google</div>
+      </div>
+      <div>
+        <div class="stat-num">a domicilio</div>
+        <div class="stat-label">llegamos a tu colonia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO RIGHT — micro-compromiso suave + mini reseña -->
+  <div class="hero-r">
+    <div class="hero-card">
+      <div class="card-eyebrow">Calcula tu servicio</div>
+
+      <!-- micro-compromiso: el precio aparece al elegir tamaño -->
+      <div class="size-picker">
+        <div class="sp-label">¿Cómo es tu perro?</div>
+        <div class="sp-opts">
+          <button class="sp-opt" onclick="pick(this)">
+            <span class="sp-emoji">🐕</span>
+            <span class="sp-name">Chico</span>
+            <span class="sp-price">Baño desde $315</span>
+          </button>
+          <button class="sp-opt" onclick="pick(this)">
+            <span class="sp-emoji">🐕</span>
+            <span class="sp-name">Mediano</span>
+            <span class="sp-price">Baño desde $400</span>
+          </button>
+          <button class="sp-opt" onclick="pick(this)">
+            <span class="sp-emoji">🐕</span>
+            <span class="sp-name">Grande</span>
+            <span class="sp-price">Baño desde $505</span>
+          </button>
+          <button class="sp-opt" onclick="pick(this)">
+            <span class="sp-emoji">🐕</span>
+            <span class="sp-name">Gigante</span>
+            <span class="sp-price">Baño desde $715</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <!-- prueba social compacta: una sola reseña real -->
+      <div class="mini-review">
+        <div class="mr-av f2">🐩</div>
+        <div>
+          <div class="mr-stars">★★★★★</div>
+          <div class="mr-q">"Rocky quedó perfecto y no tuve que mover un dedo. Ya somos clientes fijos."</div>
+          <div class="mr-name">— Carlos, Polanco</div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/525541816217?text=Hola!%20Quiero%20reservar%20🐾" target="_blank" class="card-cta">
+        <div>
+          <div class="card-cta-t">Reservar mi lugar</div>
+          <!-- pérdida: discreta, como nota de disponibilidad -->
+          <div class="card-cta-s">Los lugares de esta semana se llenan rápido</div>
+        </div>
+        <div class="card-cta-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como-funciona">
+  <div class="section-tag">Cómo funciona</div>
+  <div class="section-title">Así de sencillo</div>
+  <p class="section-sub">En 3 pasos tu perro queda como recién salido de un spa profesional.</p>
+  <div class="steps-row">
+    <div class="step-card" data-n="1">
+      <div class="step-icon" style="background:var(--yl)">📱</div>
+      <h4>Reserva en línea</h4>
+      <p>Elige servicio, tamaño y horario. Sin llamadas, sin esperas. Confirmación inmediata por WhatsApp.</p>
+    </div>
+    <div class="step-card" data-n="2">
+      <div class="step-icon" style="background:var(--ml)">🚗</div>
+      <h4>Llegamos a tu puerta</h4>
+      <p>Tu estilista certificada llega con todo el equipo. Solo necesitas abrirle la puerta.</p>
+    </div>
+    <div class="step-card" data-n="3">
+      <div class="step-icon" style="background:var(--tl)">✨</div>
+      <h4>Listo y hermoso</h4>
+      <p>Resultado profesional en casa. Te enviamos foto del resultado. Si no quedas satisfecho, lo repetimos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="servicios">
+  <div class="pricing-header">
+    <div>
+      <div class="section-tag">Lista de precios 2026</div>
+      <div class="section-title">Sin sorpresas</div>
+      <p class="section-sub">Precios claros según el tamaño y tipo de pelo de tu perro.</p>
+    </div>
+    <div class="price-tabs">
+      <button class="price-tab a" onclick="showTab('bano',this)">Baño</button>
+      <button class="price-tab" onclick="showTab('grooming',this)">Baño + Corte</button>
+      <button class="price-tab" onclick="showTab('extras',this)">Extras</button>
+    </div>
+  </div>
+
+  <!-- BAÑO -->
+  <div class="ps-tab a" id="tab-bano">
+    <p style="font-size:13px;color:var(--mu);margin-bottom:16px">Incluye: baño · limpieza de oídos · limpieza de dientes · corte de uñas · cepillado · drenaje de glándulas</p>
+    <div class="pg">
+      <div class="pc">
+        <div class="pc-size">Chico</div><div class="pc-name">Raza pequeña</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">315</span></div>
+        <ul class="pc-list"><li>Pelo corto: $315</li><li>Pelo mediano: $345</li><li>Pelo largo: $380</li></ul>
+      </div>
+      <!-- anclaje: badge "más solicitado" hace que el precio parezca la elección obvia -->
+      <div class="pc pop">
+        <div class="pop-b">✦ Más solicitado</div>
+        <div class="pc-size">Mediano</div><div class="pc-name">Raza mediana</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">400</span></div>
+        <ul class="pc-list"><li>Pelo corto: $400</li><li>Pelo mediano: $440</li><li>Pelo largo: $470</li></ul>
+      </div>
+      <div class="pc">
+        <div class="pc-size">Grande</div><div class="pc-name">Raza grande</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">505</span></div>
+        <ul class="pc-list"><li>Pelo corto: $505</li><li>Pelo mediano: $550</li><li>Pelo largo: $605</li></ul>
+      </div>
+      <div class="pc">
+        <div class="pc-size">Gigante</div><div class="pc-name">Raza gigante</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">715</span></div>
+        <ul class="pc-list"><li>Pelo corto: $715</li><li>Pelo mediano: $780</li><li>Pelo largo: $865</li></ul>
+      </div>
+    </div>
+    <p class="price-note">Los precios son referenciales y pueden ajustarse según las condiciones de limpieza. Contáctanos para un presupuesto personalizado.</p>
+  </div>
+
+  <!-- GROOMING -->
+  <div class="ps-tab" id="tab-grooming">
+    <p style="font-size:13px;color:var(--mu);margin-bottom:16px">Incluye todo el baño más corte personalizado y secado profesional.</p>
+    <div class="pg">
+      <div class="pc">
+        <div class="pc-size">Chico</div><div class="pc-name">Raza pequeña</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">390</span></div>
+        <ul class="pc-list"><li>Pelo corto: $390</li><li>Pelo mediano: $425</li><li>Pelo largo: $475</li></ul>
+      </div>
+      <div class="pc pop">
+        <div class="pop-b">✦ Más solicitado</div>
+        <div class="pc-size">Mediano</div><div class="pc-name">Raza mediana</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">505</span></div>
+        <ul class="pc-list"><li>Pelo corto: $505</li><li>Pelo mediano: $550</li><li>Pelo largo: $590</li></ul>
+      </div>
+      <div class="pc">
+        <div class="pc-size">Grande</div><div class="pc-name">Raza grande</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">630</span></div>
+        <ul class="pc-list"><li>Pelo corto: $630</li><li>Pelo mediano: $695</li><li>Pelo largo: $750</li></ul>
+      </div>
+      <div class="pc">
+        <div class="pc-size">Gigante</div><div class="pc-name">Raza gigante</div>
+        <div class="pc-from">Desde</div><div><span class="pc-cur">$</span><span class="pc-price">880</span></div>
+        <ul class="pc-list"><li>Pelo corto: $880</li><li>Pelo mediano: $980</li><li>Pelo largo: $1,090</li></ul>
+      </div>
+    </div>
+    <p class="price-note">Los precios son referenciales y pueden ajustarse según las condiciones de limpieza. Contáctanos para un presupuesto personalizado.</p>
+  </div>
+
+  <!-- EXTRAS -->
+  <div class="ps-tab" id="tab-extras">
+    <p style="font-size:13px;color:var(--mu);margin-bottom:16px">Agrégalos a cualquier servicio. Precio según el tamaño del perro.</p>
+    <div class="exg">
+      <div class="exc"><span class="exc-n">🪮 Deslanado</span><span class="exc-p">$150–$630</span></div>
+      <div class="exc"><span class="exc-n">🧶 Desenredado</span><span class="exc-p">$130–$580</span></div>
+      <div class="exc"><span class="exc-n">🧴 Shampoo antipulgas</span><span class="exc-p">$60–$125</span></div>
+      <div class="exc"><span class="exc-n">✂️ Corte de uñas</span><span class="exc-p">$90–$125</span></div>
+    </div>
+    <p class="price-note">Los precios son referenciales y pueden ajustarse según las condiciones de limpieza. Contáctanos para un presupuesto personalizado.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonios">
+  <div class="section-tag">Reseñas reales</div>
+  <div class="section-title">Lo que dicen<br>nuestros clientes</div>
+  <p class="section-sub">Más de 230 perritos felices en CDMX.</p>
+  <div class="reviews-grid">
+    <div class="rc">
+      <div class="rc-stars">★★★★★</div>
+      <p class="rc-text">"Quedé impresionada con el resultado. Mi Beagle estuvo súper tranquilo y quedó perfecto. Sin tener que salir de casa, no puedo pedir más."</p>
+      <div class="rc-author"><div class="rc-av f1">🐕</div><div><div class="rc-name">Ana García</div><div class="rc-dog">Luna, Beagle · Coyoacán</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-stars">★★★★★</div>
+      <p class="rc-text">"Llevaba meses buscando una estética a domicilio confiable. Silvia es súper profesional, puntual y Rocky quedó hermoso. Ya somos clientes permanentes."</p>
+      <div class="rc-author"><div class="rc-av f2">🐩</div><div><div class="rc-name">Carlos Méndez</div><div class="rc-dog">Rocky, Labrador · Polanco</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-stars">★★★★★</div>
+      <p class="rc-text">"Mi perro odia la estética y siempre fue un drama. Con Lomi Lomi estuvo relajado porque estaba en su casa. El resultado fue el mejor que he visto."</p>
+      <div class="rc-author"><div class="rc-av f3">🐾</div><div><div class="rc-name">Mariana López</div><div class="rc-dog">Mochi, Shih Tzu · Del Valle</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONES -->
+<section class="zones" id="zonas">
+  <div class="zones-inner">
+    <div class="zones-text">
+      <div class="section-tag">Cobertura CDMX</div>
+      <div class="section-title">¿Llegamos a<br>tu colonia?</div>
+      <p class="section-sub">Cubrimos las principales zonas de CDMX. Si no ves la tuya, escríbenos.</p>
+      <div class="zone-chips">
+        <span class="zc">Polanco</span><span class="zc">Condesa</span><span class="zc">Del Valle</span>
+        <span class="zc">Coyoacán</span><span class="zc">Narvarte</span><span class="zc">Santa Fe</span>
+        <span class="zc">Lomas</span><span class="zc">Pedregal</span><span class="zc">Satélite</span>
+        <span class="zc">+ más →</span>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:14px;color:rgba(36,35,32,.65);margin-bottom:16px;max-width:220px">¿Tu zona no aparece? Escríbenos y lo confirmamos.</p>
+      <a href="https://wa.me/525541816217?text=Hola!%20¿Cubren%20mi%20zona?" target="_blank" class="btn-g" style="border-color:rgba(36,35,32,.2);color:var(--dk)">Verificar mi zona →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <div class="section-title">Resolvemos<br>tus dudas</div>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Traen sus propios productos y equipo? <div class="faq-ico">+</div></div>
+        <div class="faq-a">Sí, llegamos con todo: tina portátil, secadora profesional, shampoos y equipo completo. Solo necesitamos acceso a agua y corriente eléctrica. Tú no preparas nada.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Cuánto tiempo tarda el servicio? <div class="faq-ico">+</div></div>
+        <div class="faq-a">Un baño básico para perro chico tarda aprox. 1 hora. Un grooming completo para perro grande puede tomar hasta 2.5 hrs. Te damos el estimado exacto al reservar.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Aceptan perros con comportamiento difícil? <div class="faq-ico">+</div></div>
+        <div class="faq-a">En la mayoría de los casos sí. En su propio ambiente los perros suelen estar mucho más tranquilos. Si tu perro tiene antecedentes de agresividad severa, cuéntanos antes de reservar.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Con cuánto tiempo de anticipación debo reservar? <div class="faq-ico">+</div></div>
+        <div class="faq-a">Recomendamos 2–3 días para asegurar tu horario preferido. Los fines de semana se llenan rápido, así que es mejor reservar con tiempo.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">¿Qué métodos de pago aceptan? <div class="faq-ico">+</div></div>
+        <div class="faq-a">Efectivo, transferencia y tarjeta. Al reservar se puede pedir una seña del 50% para confirmar el lugar. El saldo se paga al finalizar el servicio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>¿Listo para darle<br>un spa a <span class="ct">tu perro</span>?</h2>
+  <p class="sub">Reserva en menos de 2 minutos. Sin llamadas, sin complicaciones.</p>
+  <!-- pérdida: una sola línea, sin dramatismo -->
+  <p class="cta-nudge">Los lugares de fin de semana suelen agotarse antes del jueves.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/525541816217?text=Hola!%20Quiero%20reservar%20una%20cita%20para%20mi%20perro%20🐾" target="_blank" class="btn-p" style="font-size:15px;padding:15px 30px">📅 Reservar mi cita ahora</a>
+    <a href="tel:5541816217" class="btn-g">📞 Llamar a Silvia</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="logo" href="#">lomi<span style="color:var(--t)">·</span>lomi</a>
+  <p>Silvia Nava Vargas · <a href="tel:5541816217">55 4181 6217</a></p>
+  <p>© 2026 Lomi Lomi · CDMX · <a href="#">Aviso de privacidad</a></p>
+</footer>
+
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/525541816217?text=Hola!%20Quiero%20info%20sobre%20el%20servicio%20🐾" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function pick(el) {
+  document.querySelectorAll('.sp-opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+}
+function showTab(tab, btn) {
+  document.querySelectorAll('.ps-tab').forEach(s => s.classList.remove('a'));
+  document.querySelectorAll('.price-tab').forEach(b => b.classList.remove('a'));
+  document.getElementById('tab-' + tab).classList.add('a');
+  btn.classList.add('a');
+}
+function toggleFaq(el) { el.classList.toggle('open'); }
+</script>
+</body>
+</html>
