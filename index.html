@@ -46,9 +46,8 @@ nav {
 /* HERO */
 .hero {
   display: grid; grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 52px);
   align-items: center; gap: 48px;
-  padding: 64px 52px;
+  padding: 48px 52px 52px;
   position: relative; overflow: hidden;
 }
 .hero::before {
@@ -119,10 +118,12 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 
 /* Stats bajo los CTAs */
 .hero-stats {
-  display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap;
+  display: flex; gap: 36px; margin-top: 40px; flex-wrap: wrap;
+  align-items: flex-end;
   animation: up .5s .26s ease both;
 }
 .stat-num { font-family: 'Dongle', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; }
+.stat-num.text { font-size: 22px; }
 .stat-label { font-size: 12px; color: var(--mu); margin-top: 1px; }
 
 /* HERO RIGHT — card con micro-compromiso */
@@ -180,7 +181,7 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 .card-cta-arrow { font-size: 20px; color: var(--dk); }
 
 /* HOW IT WORKS */
-.how { padding: 90px 52px; background: var(--wh); }
+.how { padding: 64px 52px; background: var(--wh); }
 .section-tag {
   display: inline-block; background: var(--yl); color: #7A6200;
   font-size: 10px; font-weight: 700; text-transform: uppercase;
@@ -204,7 +205,7 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 .step-card p { font-size: 13px; color: var(--mid); line-height: 1.6; }
 
 /* PRICING */
-.pricing { padding: 90px 52px; background: var(--cr); }
+.pricing { padding: 64px 52px; background: var(--cr); }
 .pricing-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 14px; }
 .price-tabs { display: flex; gap: 5px; background: var(--wh); padding: 4px; border-radius: 50px; }
 .price-tab {
@@ -253,7 +254,7 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 }
 
 /* TESTIMONIALS */
-.testimonials { padding: 90px 52px; background: var(--dk); color: #fff; }
+.testimonials { padding: 64px 52px; background: var(--dk); color: #fff; }
 .testimonials .section-tag { background: rgba(245,200,64,.15); color: var(--y); }
 .testimonials .section-title { color: #fff; }
 .testimonials .section-sub { color: rgba(255,255,255,.45); }
@@ -272,7 +273,7 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 .rc-dog { font-size: 11px; color: rgba(255,255,255,.35); }
 
 /* ZONES */
-.zones { padding: 72px 52px; background: var(--y); }
+.zones { padding: 52px 52px; background: var(--y); }
 .zones-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
 .zones .section-tag { background: rgba(36,35,32,.1); color: var(--dk); }
 .zones .section-title { color: var(--dk); }
@@ -282,7 +283,7 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 .zc:hover { background: rgba(255,255,255,.82); }
 
 /* FAQ */
-.faq { padding: 90px 52px; background: var(--wh); }
+.faq { padding: 64px 52px; background: var(--wh); }
 .faq-inner { max-width: 680px; margin: 0 auto; }
 .faq-list { margin-top: 42px; }
 .faq-item { border-bottom: 1px solid var(--cr2); padding: 16px 0; cursor: pointer; }
@@ -293,7 +294,7 @@ h1 .ct { color: var(--t); } h1 .cm { color: var(--m); }
 .faq-item.open .faq-a { max-height: 200px; padding-top: 9px; }
 
 /* FINAL CTA */
-.final-cta { padding: 100px 52px; background: var(--cr); text-align: center; }
+.final-cta { padding: 72px 52px; background: var(--cr); text-align: center; }
 .final-cta h2 { font-family: 'Dongle', sans-serif; font-size: 64px; font-weight: 700; line-height: .92; margin-bottom: 14px; }
 .final-cta h2 .ct { color: var(--t); }
 .final-cta .sub { font-size: 16px; color: var(--mid); margin-bottom: 8px; }
@@ -385,12 +386,9 @@ footer a:hover { color: var(--y); }
         <div class="stat-num">200+</div>
         <div class="stat-label">perritos felices</div>
       </div>
+      <div style="width:1px;height:36px;background:var(--cr2);align-self:center"></div>
       <div>
-        <div class="stat-num">4.9★</div>
-        <div class="stat-label">en Google</div>
-      </div>
-      <div>
-        <div class="stat-num">a domicilio</div>
+        <div class="stat-num text">A domicilio</div>
         <div class="stat-label">llegamos a tu colonia</div>
       </div>
     </div>
